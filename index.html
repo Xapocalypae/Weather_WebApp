@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" href="img/200.png">
+  <title>Weather Checker</title>
+</head>
+<body>
+  
+  <div id="container">
+
+    <p id="heading">Weather Forecast</p>
+
+    <div id="form">
+      <input type="text" id="user-input" placeholder="Search for City / Town"></input>
+      <button id="subBtn">Go</button>
+    </div>
+
+   <div id="dashboard">
+
+        <div id="temp-c-box"><span id="temp-c-value"></span></div>
+
+        <div id="wrapper-1">
+          <div id="icon-img-box"><img src="" id="icon-img" alt=""></div>
+          <div id="location-box"></div>
+        </div>
+
+        <div id="wrapper-2">
+          <div id="feels-like-c-box" class="box">Feels Like </br>
+            <span id="feels-like-value" class="value"></span>
+            <span class="value">&#8451</span>
+          </div>
+          <div id="feels-like-text-value" class="box">Condition</br>
+          <span id="feels-like-text" class="value"></span>
+          </div>
+        </div>
+
+        <div id="wrapper-2">
+          <div id="cloud-box" class="box">Cloud Cover </br>
+            <span id="cloud-value" class="value"></span>
+            <span class="value">%</span>
+          </div>
+          <div id="precip-box" class="box">Precipitation </br> 
+            <span id="precip-value" class="value"></span>
+            <span class="value">mm</span>
+          </div>
+        </div>
+
+        <div id="wrapper-3">
+          <div id="wind-speed-box" class="box">Wind Speed </br>
+            <span id="wind-speed-value" class="value"></span>
+            <span class="value">kph</span>
+          </div>
+          <div id="pressure-box" class="box">Pressure </br>
+            <span id="pressure-value" class="value"></span>
+            <span class="value">in</span>
+          </div>
+        </div>
+
+        <div id="wrapper-4">
+          <div id="humidity-box" class="box">Humidity </br>
+            <span id="humidity-value" class="value"></span>
+            <span class="value">%</span>
+          </div>
+          <div id="uv-box" class="box">UV-Index </br>
+            <span id="uv-value" class="value"></span>
+          </div>
+       </div>
+       
+   </div>
+   <div id="credit">
+    Developed by <a href="https://github.com/Deep-Codes">Deepankar Bhade</a>
+  </div>
+
+</div>
+
+
+
+  <script src="app.js"></script>
+</body>
+</html>
