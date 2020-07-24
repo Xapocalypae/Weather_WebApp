@@ -1,4 +1,4 @@
-const apiKey = 'a7dfd5f828a94a549e9192910200407';
+const apiKey = ''; //Weather API key
 const userInput= document.querySelector('#user-input');
 const subBtn = document.querySelector('#subBtn');
 
@@ -17,14 +17,36 @@ const pressure = document.querySelector('#pressure-value');
 const humidity = document.querySelector('#humidity-value')
 const uv = document.querySelector('#uv-value');
 
+/*
+When page loads, check if there's an "latestCity" key.
+If it does, it automatically search the weather for that city.
+*/
+window.onload = checkLatestCity() 
+function checkLatestCity(){
+  const latestCity = localStorage.getItem("latestCity")
+  if(latestCity){ //if exists...
+    getWeather(latestCity)
+  }
+}
 
+function handleCitySearch(){ 
+  getWeather(userInput.value)
+}
 
-subBtn.addEventListener('click', function(){
-  
-  
-  fetch(`https://api.weatherapi.com/v1/current.json?key=${apiKey}&q=${userInput.value}`)
+/* 
+Instead of creating a event listener that updates the weather, 
+create a function that does that and use that function anywhere.
+Now, you can call that city when the user clicks the button, and can
+search for the latest city the user searched for.
+*/
+
+function getWeather(city){
+  fetch(`https://api.weatherapi.com/v1/current.json?key=${apiKey}&q=${city}`)
 	.then(res => res.json())
 	.then(data => {
+    //Set the city on the 'latestCity' key.
+    localStorage.setItem("latestCity", city)
+
     const dataSet = data.current;
     console.log(data);
     
@@ -46,7 +68,8 @@ subBtn.addEventListener('click', function(){
 
     humidity.innerHTML = dataSet.humidity;
     uv.innerHTML = dataSet.uv;
-    
   })
-})
+}
+
+
 
